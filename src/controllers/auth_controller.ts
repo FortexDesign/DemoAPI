@@ -482,6 +482,9 @@ export default class AuthController {
                 .status(403)
                 .json({ message: `You haven't verified your account yet. It's mandatory to do it to be able to log into the platform` })
 
+            console.log("Hola en línea 485")
+            
+
             // Create a Query Builder to check if the submitted user is already linked with other person from the platform
             const person: Person | null = await AppDataSource
                 .getRepository(Person)
@@ -489,6 +492,8 @@ export default class AuthController {
                 .leftJoinAndSelect(`person.organizationId`, `organizationId`)
                 .where(`person.userId = :user`, { user: user.id })
                 .getOne()
+
+            console.log("Hola en línea 496")
 
             // If the user is not linked to any person, then return an error message in JSON format with the BAD REQUEST (400) status
             if (!person) return res
@@ -501,6 +506,9 @@ export default class AuthController {
                 .relation(Person, `personAppointsRole`)
                 .of(person)
                 .loadMany()
+
+            
+            console.log("Hola en línea 511")
 
             // Create a variable to store a list with the available roles for the user
             let rolesList: Role[] = userRoles
@@ -546,6 +554,8 @@ export default class AuthController {
                 .relation(Person, `personGetsPermission`)
                 .of(person)
                 .loadMany()
+
+            console.log("Hola en línea 558")
                 
             // Create a variable to store a list with the available permissions for the user based on its roles
             let permissionsList: Permission[] = userPermissions
@@ -583,6 +593,8 @@ export default class AuthController {
 
             // Take the id of the user to make a new token from JWT
             const id: string = user.id
+
+            console.log("Hola en línea 597")
 
             const permitFile: PermissionRule[] = permissionsList.map((permission: Permission) => {
                 const permissionAttributes: PermissionRule = {
