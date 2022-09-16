@@ -125,18 +125,6 @@ export default class PeopleController {
                 groupRole
             } = req.query
 
-            // Get the permissions attribute from the body of the request
-            const { permissions } = req.body
-
-            // Check if the logged user has the right permissions to list people, and if it hasn't them, then return a personalized error schema in JSON format with the FORBIDDEN (403) status - ERROR LEVEL 1
-            if (!permissions.can(`read`, `Person`)) return res
-                .status(403)
-                .json({
-                    name: `ForbiddenAccess`,
-                    message: `You don't have the required permissions to see a list of people`,
-                    info: `No additional info provided`
-                })
-
             let keyChain: boolean = true
 
             //Check if the page exists and if its not any onther value than a number

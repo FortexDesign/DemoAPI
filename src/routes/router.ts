@@ -18,10 +18,10 @@ import { Router } from 'express'
 const router = Router()
 
 // Create a user with the values of the form over the Registration interface
-router.post('/register', Validate(RegisterUserValidation.data), AuthController.RegisterUser)
+// router.post('/register', Validate(RegisterUserValidation.data), AuthController.RegisterUser)
 
-// Verify an account through the link that it's received by email
-router.get('/api/v1/verify-email/:id', AuthController.VerifyAccount)
+// // Verify an account through the link that it's received by email
+// router.get('/api/v1/verify-email/:id', AuthController.VerifyAccount)
 
 // Login 
 router.post('/login', AuthController.LoginUser)
@@ -29,10 +29,10 @@ router.post('/login', AuthController.LoginUser)
 // Logout
 router.get('/logout', IsAuthenticated, AuthController.Logout)
 
-// Reset password 
-router.put('/reset-password', Validate(SendRecoveryEmailValidation.data), AuthController.ResetPassword)
+// // Reset password 
+// router.put('/reset-password', Validate(SendRecoveryEmailValidation.data), AuthController.ResetPassword)
 
-// New password 
-router.put('/new-password', Validate(NewPasswordValidation.data), AuthController.CreateNewPassword)
+// // New password 
+// router.put('/new-password', Validate(NewPasswordValidation.data), AuthController.CreateNewPassword)
 
 export default router
