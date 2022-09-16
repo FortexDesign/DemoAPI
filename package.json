@@ -1,0 +1,53 @@
+{
+  "name": "dextra",
+  "version": "1.0.0",
+  "description": "Web development of the platform by the development team of Fortex",
+  "main": "app.js",
+  "scripts": {
+    "dev": "ts-node-dev --respawn src/app.ts",
+    "build": "tsc",
+    "start": "node dist/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JorgeGuzman-Fortex/Dextra.git"
+  },
+  "keywords": [],
+  "author": "Dextra",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JorgeGuzman-Fortex/Dextra/issues"
+  },
+  "homepage": "https://github.com/JorgeGuzman-Fortex/Dextra#readme",
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.107.0",
+    "@aws-sdk/client-ses": "^3.107.0",
+    "@casl/ability": "^5.4.4",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.0",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "jsonwebtoken": "^8.5.1",
+    "morgan": "^1.10.0",
+    "pg": "^8.7.3",
+    "reflect-metadata": "^0.1.13",
+    "typeorm": "^0.3.6",
+    "uuid": "^8.3.2",
+    "yup": "^1.0.0-beta.4"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.2",
+    "@types/cookie-parser": "^1.4.3",
+    "@types/cors": "^2.8.12",
+    "@types/express": "^4.17.13",
+    "@types/jsonwebtoken": "^8.5.8",
+    "@types/morgan": "^1.9.3",
+    "@types/node": "^17.0.39",
+    "@types/uuid": "^8.3.4",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^4.7.2"
+  }
+}
