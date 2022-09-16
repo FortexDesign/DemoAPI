@@ -45,31 +45,31 @@ app.use(cookieParser())
 // Routes
 app.use('/', router)
 
-//people routes
-app.use('/people', IsAuthenticated, peopleRouter)
+// //people routes
+// app.use('/people', IsAuthenticated, peopleRouter)
 
-//user routes
-app.use('/user', IsAuthenticated, userRouter)
+// //user routes
+// app.use('/user', IsAuthenticated, userRouter)
 
-//form routes
-app.use('/form', IsAuthenticated, formRouter)
+// //form routes
+// app.use('/form', IsAuthenticated, formRouter)
 
-// Organization Routes
-app.use('/organization', IsAuthenticated, organizationRouter)
+// // Organization Routes
+// app.use('/organization', IsAuthenticated, organizationRouter)
 
 // Group Routes
 app.use('/group', IsAuthenticated, groupRouter)
 
-// Role Routes
-app.use('/role', IsAuthenticated, roleRouter)
+// // Role Routes
+// app.use('/role', IsAuthenticated, roleRouter)
 
-// Workspaces Routes
-app.use('/workspace', workspaceRouter)
+// // Workspaces Routes
+// app.use('/workspace', workspaceRouter)
 
-// Permission Routes
-app.use('/permission', IsAuthenticated, permissionRouter)
+// // Permission Routes
+// app.use('/permission', IsAuthenticated, permissionRouter)
 
-app.use('/test', testRouter)
+// app.use('/test', testRouter)
 
 // Delete the cache after logout
 app.use(function (req, res, next) {
